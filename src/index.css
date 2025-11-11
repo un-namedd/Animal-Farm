@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 20 12% 95%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Corruption & betrayal - deep burgundy */
+    --primary: 0 45% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Faded idealism - desaturated green */
+    --secondary: 140 15% 45%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 20 10% 85%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Deceit - sickly yellow undertones */
+    --accent: 45 60% 55%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 20 15% 80%;
+    --input: 20 15% 90%;
+    --ring: 0 45% 25%;
+
+    --radius: 0.5rem;
+    
+    /* Custom theme tokens for Animal Farm */
+    --betrayal: 0 45% 25%;
+    --corruption: 0 0% 15%;
+    --hope-faded: 140 20% 50%;
+    --propaganda: 45 70% 50%;
+    
+    /* Gradients */
+    --gradient-decay: linear-gradient(135deg, hsl(140 30% 40%) 0%, hsl(0 45% 25%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 10%) 0%, hsl(0 20% 20%) 100%);
+    
+    /* Typography emphasis */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 20 10% 90%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 20 10% 90%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 20 10% 90%;
+
+    --primary: 0 55% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 140 15% 35%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 5% 20%;
+    --muted-foreground: 20 10% 60%;
+
+    --accent: 45 65% 45%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 5% 25%;
+    --input: 0 5% 20%;
+    --ring: 0 55% 35%;
+    
+    --betrayal: 0 55% 35%;
+    --corruption: 0 0% 10%;
+    --hope-faded: 140 20% 35%;
+    --propaganda: 45 70% 45%;
+    
+    --gradient-decay: linear-gradient(135deg, hsl(140 25% 30%) 0%, hsl(0 55% 35%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 20% 15%) 100%);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
