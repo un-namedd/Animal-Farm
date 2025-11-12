@@ -58,7 +58,7 @@ const Index = () => {
               Reading Schedule
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A ten-week journey through Orwell's masterpiece, dedicating one chapter per week for thoughtful engagement
+              Dedicating one chapter per week for engagement, my 10 week journey :)
             </p>
           </div>
 
@@ -69,7 +69,7 @@ const Index = () => {
                   <thead className="bg-primary text-primary-foreground">
                     <tr>
                       <th className="px-6 py-4 text-left font-semibold">Week</th>
-                      <th className="px-6 py-4 text-left font-semibold">Chapters to Read</th>
+                      <th className="px-6 py-4 text-left font-semibold">Chapters to Read/Read</th>
                       <th className="px-6 py-4 text-left font-semibold">Key Events/Focus</th>
                     </tr>
                   </thead>
@@ -113,11 +113,12 @@ const Index = () => {
           <Card className="bg-card border-border border-l-4 border-l-primary">
             <CardContent className="p-8">
               <p className="text-card-foreground leading-relaxed text-lg">
-                <em>Animal Farm</em> is an essential choice because it provides a powerful examination of how idealism is corrupted by power. 
-                The initial desire for <strong className="text-primary">freedom and equality</strong> quickly dissolves as the pigs seize control, 
-                demonstrating how easily revolutionary movements can turn into oppression, where one tyrant simply replaces another. 
-                The novel's use of <strong className="text-propaganda">propaganda and manipulation</strong> offers crucial insight into 
-                social control and the fragility of memory and truth, making it a compelling study of political dynamics.
+                I picked <em>Animal Farm</em> because it doesn’t sugarcoat what can happen when good ideas run into real life and power takes <strong>over</strong>.
+                At first, everyone wants <strong className="text-primary">equality and freedom</strong> and honestly it sounds so so great. But when I see the pigs slowly twist those dreams into their
+                own advantage really made me question how revolutions work in the real world. The book doesn’t just point fingers at “look!!! bad guys”, it 
+                shows how easy it is for anyone with enough power (and a sharp tongue, like Squealer ;)! ) to <strong className="text-propaganda">rewrite the rules</strong> and
+                <strong className="text-propaganda">convince</strong> others everything’s fine,
+                even when it isn’t actually fine.
               </p>
             </CardContent>
           </Card>
