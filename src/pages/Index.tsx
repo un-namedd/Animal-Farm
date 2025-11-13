@@ -23,21 +23,27 @@ const Index = () => {
           
           {/* Three-Part Thematic Tagline */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-hopeFaded/20 backdrop-blur-sm p-6 rounded-lg border border-hopeFaded/30 transition-all hover:scale-105" style={{ transitionDuration: '0.4s' }}>
+            <div className="bg-hopeFaded/20 backdrop-blur-sm p-6 rounded-lg border border-hopeFaded/30 transition-all hover:scale-105" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <h2 className="text-xl font-bold text-primary-foreground mb-2">IDEALISM CORRUPTED</h2>
               <p className="text-primary-foreground/80 text-sm">
                 It all starts with Old Major's big dream, but ends up with Napoleon running things his own way.
               </p>
             </div>
             
-            <div className="bg-propaganda/20 backdrop-blur-sm p-6 rounded-lg border border-propaganda/30 transition-all hover:scale-105" style={{ transitionDuration: '0.4s' }}>
+            <div className="bg-propaganda/20 backdrop-blur-sm p-6 rounded-lg border border-propaganda/30 transition-all hover:scale-105" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <h2 className="text-xl font-bold text-primary-foreground mb-2">PROPAGANDA TRIUMPHANT</h2>
               <p className="text-primary-foreground/80 text-sm">
                 Squealer is always twisting words, making sure no one ever knows what's actually true.
               </p>
             </div>
             
-            <div className="bg-betrayal/20 backdrop-blur-sm p-6 rounded-lg border border-betrayal/30 transition-all hover:scale-105" style={{ transitionDuration: '0.4s' }}>
+            <div className="bg-betrayal/20 backdrop-blur-sm p-6 rounded-lg border border-betrayal/30 transition-all hover:scale-105" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <h2 className="text-xl font-bold text-primary-foreground mb-2">LOYALTY BETRAYED</h2>
               <p className="text-primary-foreground/80 text-sm">
                 Boxer gives everything for the farm, believing he'll be taken care of, and gets sold out for booze instead.
@@ -62,41 +68,51 @@ const Index = () => {
             </p>
           </div>
 
-          <Card className="bg-card border-border overflow-hidden">
-            <CardContent className="p-0">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-primary text-primary-foreground">
-                    <tr>
-                      <th className="px-6 py-4 text-left font-semibold">Week</th>
-                      <th className="px-6 py-4 text-left font-semibold">Chapters</th>
-                      <th className="px-6 py-4 text-left font-semibold">Key Events/Focus</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
-                    {[
-                      { week: 1, chapter: "Chapter One", events: "Old Major's dream and speech" },
-                      { week: 2, chapter: "Chapter Two", events: "Old Major dies, Animalism starts, and the animals fight back (Rebellion)" },
-                      { week: 3, chapter: "Chapter Three", events: "Seven Commandments, “Four legs good, two legs bad,” pigs get first perks" },
-                      { week: 4, chapter: "Chapter Four", events: "News gets out, Battle of the Cowshed" },
-                      { week: 5, chapter: "Chapter Five", events: "Mollie leaves, Snowball vs. Napoleon gets nasty, Snowball's kicked out" },
-                      { week: 6, chapter: "Chapter Six", events: "Brutal winter, everyone's hungry, lots of executions, goodbye “Beasts of England" },
-                      { week: 7, chapter: "Chapter Seven", events: "The bitter winter, food shortages, executions, and the abolition of \"Beasts of England\"" },
-                      { week: 8, chapter: "Chapter Eight", events: "Napoleon takes even more power, timber drama, Battle of the Windmill" },
-                      { week: 9, chapter: "Chapter Nine", events: "Boxer gets hurt, gets betrayed and sold, pigs party with whisky" },
-                      { week: 10, chapter: "Chapter Ten", events: "Years pass, pigs finish changing, “all animals are equal...” becomes a joke" },
-                    ].map((row) => (
-                      <tr key={row.week} className="hover:bg-muted/50 transition-colors">
-                        <td className="px-6 py-4 font-semibold text-primary">{row.week}</td>
-                        <td className="px-6 py-4 font-medium text-foreground">{row.chapter}</td>
-                        <td className="px-6 py-4 text-muted-foreground">{row.events}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+          <div className="grid gap-5">
+            {[
+              { week: 1, chapter: "Chapter One", events: "Old Major's dream and speech" },
+              { week: 2, chapter: "Chapter Two", events: "Old Major dies, Animalism starts, and the animals fight back (Rebellion)" },
+              { week: 3, chapter: "Chapter Three", events: "Seven Commandments, “Four legs good, two legs bad,” pigs get first perks" },
+              { week: 4, chapter: "Chapter Four", events: "News gets out, Battle of the Cowshed" },
+              { week: 5, chapter: "Chapter Five", events: "Mollie leaves, Snowball vs. Napoleon gets nasty, Snowball's kicked out" },
+              { week: 6, chapter: "Chapter Six", events: "Brutal winter, everyone's hungry, lots of executions, goodbye “Beasts of England" },
+              { week: 7, chapter: "Chapter Seven", events: "The bitter winter, food shortages, executions, and the abolition of \"Beasts of England\"" },
+              { week: 8, chapter: "Chapter Eight", events: "Napoleon takes even more power, timber drama, Battle of the Windmill" },
+              { week: 9, chapter: "Chapter Nine", events: "Boxer gets hurt, gets betrayed and sold, pigs party with whisky" },
+              { week: 10, chapter: "Chapter Ten", events: "Years pass, pigs finish changing, “all animals are equal...” becomes a joke" },
+            ].map((row, i) => (
+              <div
+                key={row.week}
+                className={`
+                  flex flex-col md:flex-row md:items-center 
+                  rounded-xl px-7 py-5 gap-2 md:gap-8 
+                  shadow-md
+                  bg-card/80
+                  border border-border
+                  border-l-8
+                  transition-transform transition-all duration-700 
+                  hover:scale-105 hover:shadow-2xl
+                  ${
+                    i % 3 === 0
+                      ? "border-l-hopeFaded"
+                      : i % 3 === 1
+                      ? "border-l-propaganda"
+                      : "border-l-betrayal"
+                  }
+                `}
+                style={{
+                  transitionDuration: '0.7s',
+                  transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)'
+                }}
+              >
+                <div className="font-bold text-xl text-primary w-16 md:w-auto">
+                  {row.week < 10 ? `0${row.week}` : row.week}
+                </div>
+                <div className="font-semibold text-foreground flex-1">{row.chapter}</div>
+                <div className="text-muted-foreground md:text-right text-base flex-[2]">{row.events}</div>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -133,7 +149,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* First Third */}
-            <Card className="bg-card border-border hover:border-hopeFaded transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-hopeFaded" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-hopeFaded/10">
                 <CardTitle className="text-hopeFaded">First Third: Origins</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">The seeds of revolution</p>
@@ -152,14 +171,17 @@ const Index = () => {
             </Card>
 
             {/* Second Third */}
-            <Card className="bg-card border-border hover:border-propaganda transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-propaganda" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-propaganda/10">
                 <CardTitle className="text-propaganda">Second Third: Transformation</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">Power consolidates</p>
               </CardHeader>
               <CardContent className="p-6">
                 <p className="text-card-foreground leading-relaxed mb-4">
-                  Once Napoleon<strong className="text-destructive">chases Snowball</strong> out with his army of dogs, everything changes. He cancels the big meetings and starts deciding everything himself, using a few other pigs as backup. 
+                  Once Napoleon <strong className="text-destructive">chases Snowball</strong> out with his army of dogs, everything changes. He cancels the big meetings and starts deciding everything himself, using a few other pigs as backup. 
                 </p>
                 <p className="text-card-foreground leading-relaxed mb-4">
                   Boxer feels weird about Snowball leaving, but he never pushes back. Instead, he just adds another motto to his life: 
@@ -172,7 +194,10 @@ const Index = () => {
             </Card>
 
             {/* Final Third */}
-            <Card className="bg-card border-border hover:border-betrayal transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-betrayal" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-betrayal/10">
                 <CardTitle className="text-betrayal">Final Third: Betrayal</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">Complete corruption</p>
@@ -204,7 +229,10 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-card border-border">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-primary"
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader>
                 <CardTitle className="text-primary">The Author</CardTitle>
               </CardHeader>
@@ -215,7 +243,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card border-border">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-secondary"
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader>
                 <CardTitle className="text-secondary">The Setting</CardTitle>
               </CardHeader>
@@ -227,7 +258,10 @@ const Index = () => {
             </Card>
           </div>
 
-          <Card className="bg-card border-border mt-6">
+          <Card 
+            className="bg-card border-border mt-6 transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-propaganda"
+            style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+          >
             <CardContent className="p-8">
               <p className="text-card-foreground leading-relaxed">
                 Things get messy almost instantly, a lot of it is because Snowball invents stuff (like the windmill) and Napoleon just wants to keep <strong className="text-propaganda">control and survive</strong>. The whole group is supposed to build something new, but the pigs start <strong className="text-betrayal">picking up all of the bad habits</strong> from humans, and the idea of “equality” just kind of fades away.
@@ -298,7 +332,7 @@ const Index = () => {
             <p className="text-muted-foreground">Thematic parallels to other totalitarian narratives</p>
           </div>
 
-          <Card className="bg-card border-border">
+          <Card className="bg-card border-border hover:border-primary transition-all" style={{ transitionDuration: '0.4s' }}>
             <CardContent className="p-8">
               <p className="text-card-foreground leading-relaxed mb-4">
                 Reading Animal Farm reminded me of so so many stories and movies about dictatorships and broken promises.
@@ -331,7 +365,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Infographic */}
-            <Card className="bg-card border-border hover:border-primary transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-primary" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-primary/10">
                 <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -347,13 +384,16 @@ const Index = () => {
               </CardHeader>
               <CardContent className="p-6">
                 <p className="text-card-foreground leading-relaxed">
-                  Like the pigs in <b>Animal Farm</b> where they're consolidating luxury for themselves, the real world wealth gaps show you how those in power continue to deepen inequality even more, and this sort of echo's the farm's transformation from revolution to oligarchy. <b><i>What does it really show though?</i></b> (so it's explained) The infographic shows us how the <b>richest 10%</b> in multiplie countries hold almost <b>all</b> of the wealth, while the stay struggling, for example the richest in the U.S. average <b>40x</b> more income than the <b>bottom 90%</b>.
+                  Like the pigs in <b>Animal Farm</b> where they're consolidating luxury for themselves, the real world wealth gaps show you how those in power continue to deepen inequality even more, and this sort of echo's the farm's transformation from revolution to oligarchy. The infographic shows us how the <b>richest 10%</b> in multiplie countries hold almost <b>all</b> of the wealth, while the stay struggling, for example the richest in the U.S. average <b>40x</b> more income than the <b>bottom 90%</b>.
                 </p>
               </CardContent>
             </Card>
 
             {/* Article */}
-            <Card className="bg-card border-border hover:border-propaganda transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-propaganda" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-propaganda/10">
                 <div className="w-12 h-12 bg-propaganda rounded-lg flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -368,13 +408,16 @@ const Index = () => {
               </CardHeader>
               <CardContent className="p-6">
                 <p className="text-card-foreground leading-relaxed">
-                  I think this perfectly mirrors Napoleon and Squealer's rewriting of history on the farm. Snowball changed where he was basically painted from hero to villain and this fosters confusion and total control through <strong className="text-propaganda">propaganda</strong> and "alternative facts." <b><i>What does this really mean though?</i></b> The article covers a 2025 executive order in the U.S. that literally reframes and manipulates the national historical narrative that's set, where they're substituting objective history with an ideologically driven narrative, and this can divide society and it can lead to a LOT of doubt on factual accuracy.
+                  I think this perfectly mirrors Napoleon and Squealer's rewriting of history on the farm. Snowball changed where he was basically painted from hero to villain and this fosters confusion and total control through <strong className="text-propaganda">propaganda</strong> and "alternative facts." The article talks about a 2025 executive order in the U.S. that was made to reframe and <strong className="text-propaganda">manipulate</strong> the national historical narrative that's set and this can cause many problems, <strong className="text-destructive">divide</strong> society, and lead to a LOT of doubt on factual accuracy.
                 </p>
               </CardContent>
             </Card>
 
             {/* Video/Podcast */}
-            <Card className="bg-card border-border hover:border-betrayal transition-all">
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-betrayal" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardHeader className="bg-betrayal/10">
                 <div className="w-12 h-12 bg-betrayal rounded-lg flex items-center justify-center mb-3">
                   <svg className="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -382,20 +425,21 @@ const Index = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <CardTitle className="text-betrayal">Video or Podcast <a href="https://carnegieendowment.org/posts/2018/10/turkmen-leaders-personality-cult-goes-viral?lang=en"
+                <CardTitle className="text-betrayal">Video or Podcast <a href="https://open.spotify.com/episode/0DjdexsyylvQrlswrQQUve?si=3879a883db654011"
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:underline">[1]</a> <a href="https://www.youtube.com/watch?v=95g_GlWdMRE"
+                  className="hover:underline">[1]</a> <a href="https://www.youtube.com/watch?v=mfA5BkF1eE0"
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:underline">[2]</a></CardTitle>
+                    className="hover:underline">[2]</a> <a href="https://www.newsweek.com/how-become-tyrant-dictators-who-feature-netflix-show-hitler-idi-amin-stalin-kim-1612111"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:underline">[3]</a></CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">Cult of Personality</p>
               </CardHeader>
               <CardContent className="p-6">
                 <p className="text-card-foreground leading-relaxed">
-                  A video or podcast analyzing the <strong>"Cult of Personality"</strong> in political leadership connects to Napoleon's manufactured elevation 
-                  through titles (e.g., "Father of All Animals," "Leader, Comrade Napoleon"), his personal anthem composed by Minimus, 
-                  and the mandated <strong>Spontaneous Demonstrations</strong>, all designed to glorify Napoleon and inspire unquestioning obedience from the working animals.
+                   Just like how the (podcast) episode explains how to create a cult of personality, Napoleon starts to adopt titles, orchestrates “spontaneous demonstrations” in his honor and then uses Squealer's <strong className="text-propaganda">propaganda</strong> to glorify himself even MORE, and <strong className="text-destructive">eliminating</strong> anyone that oppposes him. The video shows us that making a powerful leader myth is super important to maintain an authoritarian regime, which is exactly what Napoleon did in Animal Farm through <strong className="text-propaganda">propaganda</strong>, <strong className="text-destructive">fear</strong>, and <strong className="text-betrayal">loyal spectacle</strong>.
                 </p>
               </CardContent>
             </Card>
@@ -417,16 +461,13 @@ const Index = () => {
           <Card className="bg-card border-border border-l-4 border-l-muted">
             <CardContent className="p-8">
               <p className="text-card-foreground leading-relaxed mb-4">
-                I wonder what the longevity and silence of <strong className="text-muted-foreground">Benjamin the donkey</strong> truly means. 
-                Benjamin is literate and understands the changes to the Commandments, but he rarely speaks, offering only the cynical remark that 
-                <em className="text-muted-foreground">"Donkeys live a long time. None of you has ever seen a dead donkey"</em>.
+                <strong className="text-muted-foreground">Benjamin the donkey</strong> is one of the weirdest characters for me. He understands everything that's happening. He's smart, can read, and he sees the Commandments change, but it's like he almost never speaks up even with everything he sees. Every time I wanted him to say something, he kept quiet. <i><strong className="text-muted-foreground">"Donkeys live a long time. None of you has ever seen a dead donkey"</strong></i>.
               </p>
               <p className="text-card-foreground leading-relaxed mb-4">
-                His wisdom seems to translate into a fatalistic nihilism, refusing to fight against the oppression of the pigs, though he is devoted to Boxer. 
-                He breaks his silence only to reveal the horrific truth that Boxer is being sent to the knacker.
+              He lets stuff happen right in front of him, but he only once broke his silence when Boxer was taken away to the knacker. It's like he's saying, <i><strong className="text-secondary">"I see what's going on, but I'm not going to say anything because I don't want to get in trouble."</strong></i>
               </p>
               <p className="text-card-foreground leading-relaxed">
-                His inaction, despite his intelligence, raises the question of whether <strong className="text-foreground">knowing the truth but refusing to act makes one complicit in the oppression</strong>.
+                It makes me wonder, if you see the truth but never do anything, <strong className="text-foreground">is that just another way of helping the bad guys win?</strong>
               </p>
             </CardContent>
           </Card>
@@ -447,17 +488,16 @@ const Index = () => {
           <Card className="bg-card border-border border-l-4 border-l-destructive">
             <CardContent className="p-8">
               <p className="text-card-foreground leading-relaxed mb-4">
-                The single most surprising moment in the novel is when the pigs, led by Squealer, suddenly begin <strong className="text-destructive">walking on their hind legs</strong>. 
-                This act directly violates the core principle of Animalism, <em className="text-primary font-semibold">"Whatever goes upon two legs is an enemy"</em>. 
-                The terror of the other animals is palpable.
+                The craziest and wildest moment for me was when the pigs suddenly started walking on two legs. It's not just casual thing that they did, it <strong className="text-destructive">destroys</strong> everything Animalism was supposed to be.
               </p>
               <p className="text-card-foreground leading-relaxed mb-4">
-                The surprise is compounded by the sheep, who had been secretly trained by Squealer, immediately changing their bleating slogan from 
-                <em>"Four legs good, two legs bad"</em> to <strong className="text-propaganda">"Four legs good, two legs better!"</strong>
+              <i><strong className="text-primary font-semibold">"Whatever goes upon two legs is an enemy"</strong></i>. 
+              </p>
+              <p className="text-card-foreground leading-relaxed mb-4">
+                The <strong className="text-betrayal">sheep switching</strong> from <i><strong className="text-primary font-semibold">"Four legs good, two legs bad"</strong></i> to <strong className="text-propaganda">"Four legs good, two legs better!"</strong> felt super twisted for me, Squealer just completely <strong className="text-propaganda">brainwashed</strong> them. It's like they forgot about the whole Animalism thing and just started following Napoleon blindly.
               </p>
               <p className="text-card-foreground leading-relaxed">
-                This sudden, final reversal marks the moment the pigs completely reject the revolutionary principles and assume the identity of their former human masters, 
-                culminating in Napoleon carrying a whip.
+              As soon as <strong className="text-betrayal">Napoleon picks up a whip</strong>, I just knew the revolution was <strong className="text-muted-foreground">dead</strong> and the pigs were <strong className="text-betrayal">no different</strong> from the humans they kicked out.
               </p>
             </CardContent>
           </Card>
@@ -483,25 +523,23 @@ const Index = () => {
               
               <div className="space-y-4 text-card-foreground leading-relaxed pl-4 border-l-4 border-primary">
                 <p>
-                  I write to you from the field, observing the spot where the windmill was finally completed, though it is now used for profit rather than power. 
+                  I wish I could have warned you before things got so bad. I write to you, where I'm observing the spot where the windwill got finished, but now is used to profit rather than power.
                   I wish I could have reached you sooner on that day when the van came.
                 </p>
                 <p>
-                  Your constant unwavering dedication—<strong className="text-primary">"I will work harder!"</strong> and <strong className="text-propaganda">"Napoleon is always right"</strong>—was 
-                  truly admirable, but it was tragically misplaced. You labored relentlessly, forcing your mighty shoulders against boulders, even while nursing a terrible injury.
+                  You were the <strong className="text-secondary">hardest worker</strong>, and your faith in <strong className="text-primary">"I will work harder!"</strong> and <strong className="text-propaganda">"Napoleon is always right"</strong> made everyone believe things would work out. It sucks that the very leaders you helped ended up betraying you and sent you away just for more booze. 
                 </p>
                 <p>
-                  Your great strength was the foundation upon which Napoleon built his tyranny. He used your effort, knowing you had been promised a peaceful retirement. 
-                  It is heartbreaking to know that the pigs rewarded your ultimate loyalty by selling you for money, which they used to buy <strong className="text-betrayal">another case of whisky</strong>.
+                  You should've got the peaceful life they promised, and it's honestly heartbreaking what happened. You were the foundation upon which Napoleon built his entire tyranny. He <strong className="text-betrayal">used</strong> your effort, even knowing you were <strong className="text-secondary">promised a peaceful retirement</strong>. 
                 </p>
                 <p>
-                  Please know that your comrades, especially Clover and Benjamin, remembered your sacrifice, even if Napoleon immediately distorted your last words.
+                  Please know that your comrades, Clover, Benjamin, all of us, we'll always remember how loyal you stayed, even if the pigs tried to twist it around.
                 </p>
               </div>
 
               <div className="mt-6 text-right">
                 <p className="text-card-foreground italic">With endless sorrow,</p>
-                <p className="text-muted-foreground">A Fellow Creature of Animal Farm</p>
+                <p className="text-muted-foreground">A Friend, Fellow, and Comrade.</p>
               </div>
             </CardContent>
           </Card>
@@ -517,11 +555,14 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Symbolic Image Concept */}
-            <Card className="bg-card border-border hover:border-primary transition-all" style={{ transitionDuration: '0.4s' }}>
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-primary" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-primary mb-4">Central Symbolic Image</h3>
                 <p className="text-card-foreground leading-relaxed mb-4">
-                  The ultimate failure of the Rebellion is represented through the metamorphosis of pig into human—the blending of animal and human characteristics that marks the final betrayal.
+                  The saddest symbol is how the animals, after everything, look from the pigs to the humans and can't tell them apart, as if they're all the same. All the hope for something new ends up wasted, and it honestly makes you wonder what the point of the rebellion was.
                 </p>
                 <p className="text-muted-foreground text-sm italic">
                   "The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which."
@@ -530,36 +571,40 @@ const Index = () => {
             </Card>
 
             {/* Color Palette */}
-            <Card className="bg-card border-border hover:border-secondary transition-all" style={{ transitionDuration: '0.4s' }}>
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-secondary" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-secondary mb-4">Dominant Color Palette</h3>
                 <div className="space-y-3 mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded bg-hopeFaded border-2 border-foreground/20" />
-                    <div>
-                      <p className="font-semibold text-foreground">Faded Green</p>
-                      <p className="text-sm text-muted-foreground">The trampled flag of hope</p>
+                  {/* Individual color transitions */}
+                  <div className="flex items-center gap-3 group">
+                    <div className="w-12 h-12 rounded bg-hopeFaded border-2 border-foreground/20 transition-all duration-100 group-hover:scale-110 group-hover:ring-4 group-hover:ring-hopeFaded/40" />
+                    <div className="transition-all duration-100 group-hover:translate-x-2">
+                      <p className="font-semibold text-foreground transition-colors duration-100 group-hover:text-hopeFaded">Faded Green</p>
+                      <p className="text-sm text-muted-foreground transition-colors duration-100 group-hover:text-hopeFaded/70">The trampled flag of hope</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded bg-betrayal border-2 border-foreground/20" />
-                    <div>
-                      <p className="font-semibold text-foreground">Deep Burgundy</p>
-                      <p className="text-sm text-muted-foreground">Bloodshed and betrayal</p>
+                  <div className="flex items-center gap-3 group">
+                    <div className="w-12 h-12 rounded bg-betrayal border-2 border-foreground/20 transition-all duration-100 group-hover:scale-110 group-hover:ring-4 group-hover:ring-betrayal/40" />
+                    <div className="transition-all duration-100 group-hover:translate-x-2">
+                      <p className="font-semibold text-foreground transition-colors duration-100 group-hover:text-betrayal">Deep Burgundy</p>
+                      <p className="text-sm text-muted-foreground transition-colors duration-100 group-hover:text-betrayal/70">Bloodshed and betrayal</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded bg-corruption border-2 border-foreground/20" />
-                    <div>
-                      <p className="font-semibold text-foreground">Charcoal Black</p>
-                      <p className="text-sm text-muted-foreground">Corruption and darkness</p>
+                  <div className="flex items-center gap-3 group">
+                    <div className="w-12 h-12 rounded bg-corruption border-2 border-foreground/20 transition-all duration-100 group-hover:scale-110 group-hover:ring-4 group-hover:ring-corruption/40" />
+                    <div className="transition-all duration-100 group-hover:translate-x-2">
+                      <p className="font-semibold text-foreground transition-colors duration-100 group-hover:text-corruption">Charcoal Black</p>
+                      <p className="text-sm text-muted-foreground transition-colors duration-100 group-hover:text-corruption/70">Corruption and darkness</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded bg-propaganda border-2 border-foreground/20" />
-                    <div>
-                      <p className="font-semibold text-foreground">Sickly Yellow</p>
-                      <p className="text-sm text-muted-foreground">Deceit and propaganda</p>
+                  <div className="flex items-center gap-3 group">
+                    <div className="w-12 h-12 rounded bg-propaganda border-2 border-foreground/20 transition-all duration-100 group-hover:scale-110 group-hover:ring-4 group-hover:ring-propaganda/40" />
+                    <div className="transition-all duration-100 group-hover:translate-x-2">
+                      <p className="font-semibold text-foreground transition-colors duration-100 group-hover:text-propaganda">Sickly Yellow</p>
+                      <p className="text-sm text-muted-foreground transition-colors duration-100 group-hover:text-propaganda/70">Deceit and propaganda</p>
                     </div>
                   </div>
                 </div>
@@ -567,18 +612,18 @@ const Index = () => {
             </Card>
 
             {/* Thematic Journey */}
-            <Card className="bg-card border-border hover:border-accent transition-all md:col-span-2" style={{ transitionDuration: '0.4s' }}>
+            <Card 
+              className="bg-card border-border transition-transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:border-accent md:col-span-2" 
+              style={{ transitionDuration: '0.7s', transitionTimingFunction: 'cubic-bezier(.32,1.56,.54,1.01)', transitionDelay: '0.1s' }}
+            >
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-accent mb-6 text-center">Design Justification</h3>
-                <p className="text-card-foreground leading-relaxed mb-4">
-                  This visual concept captures the ultimate betrayal through the metamorphosis imagery—the pigs walking on hind legs, carrying whips, and becoming indistinguishable from humans.
-                </p>
                 <p className="text-card-foreground leading-relaxed mb-4">
                   The color journey from hopeful green (the flag with hoof and horn) to the dark corruption of burgundy and black mirrors the ideological decay from Animalism to totalitarianism.
                 </p>
                 <p className="text-muted-foreground text-sm italic border-l-4 border-primary pl-4">
                   "ALL ANIMALS ARE EQUAL BUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS."
-                  <br />—The final, singular Commandment
+                  <br />The final, singular Commandment
                 </p>
               </CardContent>
             </Card>
@@ -593,13 +638,17 @@ const Index = () => {
             The Cycle Complete
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            The ISP demonstrates a complete cycle of revolutionary hope, struggle, and tragic disillusionment. 
-            From Old Major's vision of equality to Napoleon's absolute tyranny, the novel reveals how idealism can be corrupted, 
-            propaganda can triumph over truth, and loyalty can be brutally betrayed.
+            Looking back at the whole story, you go from rooting for Major's dream to feeling totally let down when Napoleon takes over everything. It's honestly depressing how propaganda twists the truth and how loyalty means nothing, at all, in the end. Animal Farm shows that even the best ideas are easy to lose when people (or pigs) want power more than anything else.
           </p>
-          <blockquote className="text-xl italic text-card-foreground border-l-4 border-primary pl-6 py-4 bg-card rounded-r-lg">
-            "The creatures outside looked from pig to man, and from man to pig, and from pig to man again; 
-            but already it was impossible to say which was which."
+          <blockquote
+            className="relative text-xl italic text-card-foreground bg-card rounded-xl py-8 px-10 shadow-lg transition-transform duration-700 hover:scale-105 hover:shadow-2xl border-l-8 border-corruption/80 mx-auto max-w-2xl"
+          >
+            <span className="absolute left-8 text-5xl text-corruption/50 select-none pointer-events-none leading-none">“</span>
+            <span className="block leading-relaxed">
+              The creatures outside looked from pig to man, and from man to pig, and from pig to man again; <br />
+              but already it was impossible to say which was which.
+            </span>
+            <span className="absolute bottom-4 right-11 text-5xl text-corruption/50 select-none pointer-events-none leading-none">”</span>
           </blockquote>
         </div>
       </section>
@@ -607,7 +656,12 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 bg-corruption text-primary-foreground/80 text-center">
         <p className="text-sm">
-          Independent Study Project Reading Journal • George Orwell's <em>Animal Farm</em> (1945)
+          Independent Study Project Reading Journal • George Orwell's <em>Animal Farm</em> (1945) <br />
+          <br />
+          I worked on this project and did a lot of research on the book, and I hope you enjoyed reading it as much as I did!
+          <br />
+          <br />
+          Omar Rihani - 2025 - The Journey Begins...
         </p>
       </footer>
     </div>
